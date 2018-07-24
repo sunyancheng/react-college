@@ -1,0 +1,127 @@
+.experiment {
+  &-wrapper {
+    display: flex;
+    position: relative;
+    top: 20px;
+    width: 100%;
+    .ant-dropdown-menu-item, .ant-dropdown-menu-submenu-title {
+      cursor: text;
+      user-select: text;
+      padding: 0;
+    }
+    .topo-tooltip {
+      p {
+        color: #435269;
+        span {
+          color: #8494AD;
+        }
+      }
+
+    }
+  }
+  &_sider {
+    width: 100%;
+    // min-width: 360px;
+    overflow-x: scroll;
+    height: 100%;
+  }
+  &_content {
+    flex: 1;
+    position: relative;
+    margin-right: 10px;
+  }
+  &-operate-row {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 0 30px;
+  }
+  &-status {
+    color: #fff;
+    line-height: 34px;
+    &.Creating {
+      &:before {
+        content: '';
+        width: 26px;
+        display: inline-block;
+        height: 26px;
+        border-radius: 13px;
+        border: 3px solid #03AE64;
+        background: transparent;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 26px;
+        font-size: 20px;
+        border-left-color: #51575e;
+        animation: 2s linear rotate infinite;
+      }
+      // &:after {
+      //   content: '场景载入中'
+      // }
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    &.CreateFailed,
+    &.UpdateFailed,
+    &.start_failed, {
+      &:before {
+        content: '!';
+        width: 26px;
+        display: inline-block;
+        height: 26px;
+        border-radius: 13px;
+        background: red;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 26px;
+        font-size: 20px;
+      }
+      &:after {
+        content: '载入失败，请稍后再试'
+      }
+    }
+    &.UpdateFailed {
+      &:after {
+        content: '实验状态异常'
+      }
+    }
+    &.Deleting {
+      &:before {
+        content: '';
+        width: 26px;
+        display: inline-block;
+        height: 26px;
+        border-radius: 13px;
+        border: 3px solid #03AE64;
+        background: transparent;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 26px;
+        font-size: 20px;
+        border-left-color: #51575e;
+        animation: 2s linear rotate infinite;
+      }
+      &:after {
+        content: '实验停止中...'
+      }
+    }
+    &.CreateComplete,
+    &.running {
+      &:before {
+        content: '实验场景'
+      }
+      &:after {
+        content: '(已开启)';
+        color: #03AE64;
+      }
+    }
+    &:before {
+      content: '';
+      margin-right: 12px;
+    }
+  }
+}

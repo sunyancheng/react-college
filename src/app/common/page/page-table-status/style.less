@@ -1,0 +1,45 @@
+@status-success-color: #03AE64;
+@status-error-color: #FF3B27;
+@status-warning-color: @warning-color;
+@status-default-color: #97A7C1;
+.status-style (@color) {
+  color: @color;
+  &::before {
+    background-color: @color;
+  }
+}
+.status {
+  &-common {
+    margin-left: 14px;
+    position: relative;
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      left: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &.success {
+      .status-style(@status-success-color);
+    }
+    &.error {
+      .status-style(@status-error-color);
+    }
+    &.warning {
+      .status-style(@status-warning-color);
+    }
+    &.default {
+      .status-style(@status-default-color);
+    }
+    &.danger {
+      .status-style(@status-error-color);
+    }
+    &.pending{
+      .status-style(#2696DE)
+    }
+  }
+}

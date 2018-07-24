@@ -1,0 +1,41 @@
+.drop-content-component {
+  position: relative;
+  height: 100%;
+  background: url(https://p4.ssl.qhimg.com/t01dbd1c57bfd2cf39a.png) no-repeat 0/cover;
+  .vis-network {
+    &:focus {
+      outline: 0;
+    }
+  }
+  .topo-tooltip {
+    background: #fff;
+    padding: 20px 22px;
+    min-width: 200px;
+    border-radius: 6px;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: 10px solid transparent;
+      border-bottom-color: #fff;
+      top: -20px;
+      left: 50%;
+      margin-left: -20px;
+    }
+  }
+  .ant-dropdown {
+    user-select: none;
+    visibility: hidden;
+    min-width: 100px !important;
+  }
+  .ant-dropdown-trigger {
+    height: 100%;
+    &:focus {
+      outline: 0;
+    }
+    & >div:focus {
+      outline: 0;
+    }
+  }
+}

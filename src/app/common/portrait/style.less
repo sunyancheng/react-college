@@ -1,0 +1,44 @@
+figure.avatar-component {
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  color: #8494ad;
+  z-index: 1;
+  .container {
+    position: relative;
+    background: #fafafa no-repeat 0/cover;
+    height: 200px;
+    border: 2px dashed #d9d9d9;
+    border-radius: 100px;
+    &.container--no-border {
+      border-color: transparent;
+      border-width: 0;
+    }
+  }
+  .ant-upload-list {
+    display: none;
+  }
+  .edit-wrapper {
+    cursor: pointer;
+    line-height: 44px;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    left: 50%;
+    margin-left: -24px;
+    border: 2px solid rgba(67, 82, 105, 0.2);
+    border-radius: 6px;
+    color: #435269;
+    opacity: .5;
+    background: #fff;
+    .icon-camera:before {
+      font-size: 24px;
+    }
+    &:hover {
+      opacity: 1;
+      border-color: rgba(31, 38, 49, 0.4);
+    }
+  }
+}

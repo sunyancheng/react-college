@@ -1,0 +1,320 @@
+.timetable-component {
+  background: #fff;
+  min-width: 1064px;
+  &__header {
+    display: flex;
+    height: 80px;
+    line-height: 80px;
+    border-bottom: 1px solid #f1f6f7;
+    &>div {
+      flex: 1;
+    }
+  }
+  .left {
+    font-size: 20px;
+    text-indent: 30px;
+    font-family: @font-family-regular;
+  }
+  .week-selector {
+    text-align: right;
+    padding-right: 30px;
+    color: #435269;
+    user-select: none;
+    >span {
+      // display: inline-block;
+      border: 1px solid #d9d9d9;
+      padding: 6px 20px;
+    }
+    .content {
+      border-left: 0;
+      border-right: 0;
+    }
+    .prev, .next {
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .prev {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .next {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  .month-selector {
+    user-select: none;
+    color: #435269;
+    font-size: 24px;
+    text-align: center;
+    .content {
+      margin: 0 20px;
+    }
+    &__left, &__right {
+      border: 9px solid transparent;
+      display: inline-block;
+      border-bottom-width: 5px;
+      border-top-width: 5px;
+      margin-bottom: 4px;
+      cursor: pointer;
+      &.disabled {
+        border-right-color: #435269;
+      }
+    }
+    &__left {
+      border-right-color: #435269;
+      &:hover {
+        border-right-color: #0FBF73;
+      }
+
+    }
+    &__right {
+      border-left-color: #435269;
+      &:hover {
+        border-left-color: #0FBF73;
+      }
+    }
+  }
+}
+
+
+@header-height: 80px;
+@font-color: #435269;
+@font-color-shallow: #97A7C1;
+@omit-font-family: @font-family-yahei;
+.curriculum {
+  margin-bottom: 100px;
+  &-header {
+    position: relative;
+    height: @header-height;
+    padding: 0 30px;
+    color: @font-color;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid @border-color;
+    &-title {
+      position: absolute;
+      line-height: @header-height;
+      font-size: 20px;
+      font-family: @font-family-regular;
+    }
+    &-month-selector {
+    // display: inline-block;
+      line-height: @header-height;
+      font-size: 24px;
+      font-family: Tahoma-Bold;
+      text-align: center;
+      &-arrow {
+        font-size: 10px;
+      }
+      & span {
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+table.curriculum-table,
+tbody.curriculum-tbody,
+thead.curriculum-thead {
+
+  width: 100%;
+  box-sizing: border-box;
+  & tr {
+    &:nth-child(even) {
+      td{
+        border-bottom: 1px solid @border-color;
+        padding-bottom: 20px;
+        &[rowspan='2']{
+          // padding: 0;
+        }
+      }
+
+    }
+    &:nth-child(odd) {
+      td{
+        padding-top: 20px;
+        &[rowspan='2']{
+          padding-bottom: 20px;
+        }
+      }
+    }
+    td[rowspan='2'] {
+      border-bottom: 1px solid @border-color;
+      // padding: 0;
+    }
+  }
+  & td,
+  & th {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    font-family: @font-family-regular;
+    color: @font-color;
+  }
+  & th.shallow {
+    color: @font-color-shallow;
+  }
+  & th.today {
+    color: #00b061;
+    &>span {
+      &:after {
+        content: '\4ECA\5929';
+        color: #fff;
+        background: #00b061;
+        padding: 1px 6px;
+        border-radius: 10px;
+        margin-left: 4px;
+      }
+    }
+  }
+  & td {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &:hover {
+      .cell-box-shadow {
+        display: block;
+      }
+    }
+    .cell-box-shadow {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      height: 38px;
+      line-height: 38px;
+      width: 130px;
+      background: transparent;
+      color: currentColor;
+      border-radius: 6px;
+      box-shadow: 0 0 3px 1px;
+      span + span {
+        margin-left: 10px;
+      }
+      &.merged {
+        height: 80px;
+        line-height: 80px;
+      }
+    }
+    &>span {
+      font-family: @font-family-regular;
+      text-align: left;
+      & .bold {
+        font-family: Tahoma-Bold;
+      }
+    }
+  }
+}
+
+thead.curriculum-thead {
+  & tr {
+    height: 40px; // display: flex;
+    line-height: 40px;
+    th {
+      text-indent: 2em;
+      text-align: left;
+      border-bottom: 1px solid @border-color;
+    }
+  }
+}
+
+.omit-course {
+  // position: absolute;
+  // left: 50%;
+  // top: 20px;
+  // margin-left: -65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 130px;
+  background-color: #F8F8F8;
+  border-radius: 6px;
+  font-size: 12px;
+  color: @font-color-shallow;
+  font-family: @omit-font-family;
+  &.merged {
+    height: 80px;
+  }
+  &.editable {
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 3px 1px;
+    }
+  }
+  // &:hover {
+  //   // cursor: pointer;
+  //   // box-shadow: 0 0 3px 1px;
+  // }
+}
+.timetable-component-course-info-table {
+  p {
+    color: #435269;
+    span {
+      color: #8494AD;
+    }
+  }
+}
+#printable-timetable {
+  display: none;
+}
+
+
+
+@media print {
+  //隐藏掉一些dom的样式
+  html, body, #app, #app>div, .user-wrapper, .user-page, .user-page-fill, .layout-fixed-width, .user-layout, .layout, .layout__main, .layout__main__content{
+    height: inherit;
+    overflow: visible;
+    position: inherit!important;
+  }
+
+  body{
+    header,
+    .curriculum-table,
+    .timetable-component__header,
+    .banner-wrapper,
+    .user-page-header,
+    .curriculum-table,
+    .page-layout__header,
+    .layout__main__sider  {
+      display: none
+    }
+  }
+  #printable-timetable {
+    display: table;
+    // position: fixed;
+    visibility: visible;
+    width: 100%;
+    top: 40px;
+    left: 0;
+    table-layout: fixed;
+    color:#000;
+    caption {
+      // position: fixed;
+      // top: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      color:#000;
+      caption-side: top
+    }
+    td, th {
+      border: 1px solid #000;
+      font-size: 12px;
+      color:#000;
+    }
+    th {
+      border-bottom: 0;
+    }
+    td {
+      height: 50px;
+      text-align: center;
+      p{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

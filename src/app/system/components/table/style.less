@@ -1,0 +1,52 @@
+@font-theme-color: @font-color-main-theme;
+.admin-table{
+  width: 100%;
+  border-top: 1px solid rgb(241, 246, 247);
+  color: @font-theme-color;
+  // display: flex;
+  &-head {
+    display: block;
+    height: 50px;
+    &>tr {
+      display: flex;
+      height: 50px;
+      padding-left: 60px;
+      border-bottom: 1px solid rgb(241, 246, 247);
+      &>th {
+        flex: 1;
+        line-height: 50px;
+        &.expansion {
+          flex: 2;
+        }
+        &:last-child {
+          text-align: center;
+          border-left: 1px solid rgb(241, 246, 247);
+        }
+      }
+    }
+  }
+  &-body {
+    display: block;
+    height: 600px;
+    overflow: auto;
+    &>tr {
+      display: flex;
+      height: 50px;
+      padding-left: 60px;
+      border-bottom: 1px solid rgb(241, 246, 247);
+      overflow: hidden;
+      &>td {
+        flex: 1;
+        line-height: 50px;
+        &.expansion {
+          flex: 2;
+        }
+        &:last-child {
+          text-align: center;
+          border-left: 1px solid rgb(241, 246, 247);
+        }
+      }
+    }
+  }
+}
+

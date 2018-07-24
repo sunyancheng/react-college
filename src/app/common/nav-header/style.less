@@ -1,0 +1,55 @@
+@header-height: @user-header-height;
+@font-color: @deep-purple;
+.user-header {
+  height: @header-height;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #FFF;
+  &-choosen {
+    .user-header-item {
+      color: @green-color;
+      border-bottom: solid 1px @green-color;
+    }
+  }
+  &-right {
+    float: right;
+    &-menu {
+      // display: inline-block;
+      line-height: @header-height;
+      float: right; // float: right;
+      font-size: 14px;
+      &-item {
+        float: left;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      & a {
+        text-decoration: none;
+        color: @font-color;
+        margin-right: 40px;
+        & span {
+          padding-bottom: 10px;
+        }
+        &.header-choosen .header-item {
+          color: @green-color;
+          border-bottom: 2px solid @green-color;
+        }
+        &:focus {
+          text-decoration: none;
+        }
+        &:hover {
+          color: @green-color;
+        }
+      }
+    }
+    &-avatar {
+      float: right;
+      height: @header-height;
+      line-height: @header-height;
+      .user-info {
+        color: black;
+        margin-right: 0;
+      }
+    }
+  }
+}

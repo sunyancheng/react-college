@@ -1,0 +1,35 @@
+@label-color: #8494AD;
+@font-color: @font-color-main-theme;
+// .user-info-modal {
+//   div.ant-modal {
+//     width: 620px;
+//   }
+// }
+.user-info__content {
+  position: relative;
+  font-size: 14px;
+  & > div > div {
+    margin-bottom: 20px;
+    color: @font-color;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    & > label {
+      color: @label-color;
+      margin-right: 10px;
+      display: inline-block;
+      width: 70px;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+  &-avatar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+    background-color: #333;
+    // border-radius: 50%;
+  }
+}

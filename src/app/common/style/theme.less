@@ -1,0 +1,51 @@
+// 头部的高度
+@user-header-height: 60px;
+@user-width: 1220px;
+@user-content-padding-left-right: 20px;
+@common-banner-height: 160px;
+@admin-header-height: 60px;
+@common-sider-width: 256px;
+@common-sider-border-color: rgb(241, 246, 247);
+@green-color: #0FBF73;
+@green-color2: #03AE64;
+@green-color3: #5BFF85;
+@green-color4: #008C50;
+@border-color: rgb(241, 246, 247);
+@banner-color: #3A4A65;
+@grey-color: #EEE;
+@grey-color2: #AAABBB;
+@grey-color3: #CCC;
+@font-color-main-theme: #435269;
+@course-content-bg: #212427;
+@course-user-panel-bg: rgba(36,36,47,1);
+@deep-purple: #333444;
+@red-color: #FF3B27;
+@font-color-shallow: #97A7C1;
+@font-color-shallow2: #CCC;
+@font-color-shallow3: #888999;
+@warning-color: #FFA600;
+@font-family-common:'PingFang SC',arial,'Microsoft Yahei',georgia,verdana,helvetica,sans-serif;
+@font-family-medium: PingFangSC-Medium, @font-family-common;
+@font-family-regular: PingFangSC-Regular, @font-family-common;
+@font-family-bold: Tahoma-Bold, @font-family-common;
+@font-family-yahei: MicrosoftYaHei, @font-family-common;
+@font-family-semibold: PingFangSC-Semibold, @font-family-common;
+
+
+.background-image-png(@path) {
+  background-image: url("@{path}@1x.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  @media all and (min-resolution: 2dppx) {
+    background-image: url("@{path}@2x.png");
+  }
+}
+
+.background-image-gif(@path) {
+  background-image: url("@{path}@1x.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  @media all and (min-resolution: 2dppx) {
+    background-image: url("@{path}@2x.gif");
+  }
+}

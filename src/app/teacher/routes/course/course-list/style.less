@@ -1,0 +1,60 @@
+@font-color: @font-color-main-theme;
+@description-color: @font-color-shallow;
+
+.teacher-course-list {
+  background-color: #FFF;
+}
+
+.teacher-course-cell {
+  padding: 40px;
+  height: 417px;
+  border-right: 1px solid #f1f6f7;
+  border-bottom: 1px solid #f1f6f7;
+  &__course-pic {
+    background-size: cover;
+    width: 320px;
+    padding-bottom: 60.625%;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  &__text {
+    width: 320px;
+    margin: 0 auto;
+  }
+  &__course-name {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 20px;
+    color: @font-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &__course-desc {
+    margin-top: 10px;
+    .course-teacher-name {
+      display: inline-block;
+      width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      line-height: 14px;
+      color: @font-color;
+      & > span {
+        margin-right: 5px;
+      }
+    }
+    .course-level {
+      float: right;
+    }
+  }
+  &__description {
+    margin-top: 10px;
+    font-size: 13px;
+    color: @description-color;
+    line-height: 20px;
+    height: 60px;
+    width: 320px;
+  }
+}

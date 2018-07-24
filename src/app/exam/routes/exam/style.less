@@ -1,0 +1,82 @@
+.examnation-wrapper {
+  width: 100%;
+  height: 100%;
+  // height: calc(~"100% - 60px");
+  // min-width: 1200px;
+  // overflow: auto;
+  &-form {
+    // overflow: auto;
+    height: calc(~"100% - 60px");
+  }
+  .examnation-form {
+    overflow: auto;
+  }
+  & .examnation-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    height: 60px;
+  }
+  .examnation-result {
+    position: relative;
+    width: 300px;
+    overflow: auto;
+    &-flag {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 260px;
+      height: 480px;
+      text-align: center;
+      .background-image-png('/image/bg_grade');
+      margin: 30px 0;
+      color: #FFF;
+      font-size: 18px;
+      .flag {
+        &-title {
+          font-size: 18px;
+          color: #FFF;
+          text-align: center;
+          line-height: 18px;
+          margin-top: 60px;
+          margin-bottom: 30px;
+        }
+        &-score {
+          margin-bottom: 20px;
+          color: #FFD219;
+          font-size: 50px;
+          line-height: 50px;
+          text-align: center;
+        }
+        &-result {
+          font-size: 12px;
+          color: #FFFFFF;
+          text-align: center;
+          line-height: 28px;
+        }
+        &-time {
+          font-size: 12px;
+          color: #FFFFFF;
+          text-align: center;
+          line-height: 28px;
+        }
+        &-time-detail {
+          margin-bottom: 50px;
+          font-size: 16px;
+          line-height: 16px;
+          color: #FFFFFF;
+          text-align: center;
+        }
+        &-slogan {
+          margin-bottom: 30px;
+          font-size: 16px;
+          color: #5BFF85;
+          text-align: center;
+          line-height: 16px;
+        }
+      }
+
+    }
+  }
+}

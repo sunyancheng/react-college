@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="/image/favicon.ico" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/no-ie.css"></link>
+  <%= htmlWebpackPlugin.options.urlScript %>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .not-allowed {
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    img {
+      margin-bottom: 5px;
+    }
+
+    .title {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #222333;
+    }
+
+    .button {
+      cursor: pointer;
+      background-color: #0FBF73;
+      display: inline-block;
+      padding: 0 30px;
+      line-height: 40px;
+      height: 40px;
+      border: 1px solid;
+      border-color: transparent;
+      border-radius: 3px;
+      white-space: nowrap;
+      transition: all .2s;
+      color: #fff;
+      margin-bottom: 80px;
+    }
+    .button:hover {
+      background-color: #16CC7E;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="not-allowed">
+    <img src="../image/image-permission@1x.png">
+    <div class="desc">
+      <div class="title">您处于休学状态，请联系老师办理复学手续</div>
+    </div>
+    <div class="button" onClick="goBack()">点击返回首页</div>
+  </div>
+</body>
+
+</html>

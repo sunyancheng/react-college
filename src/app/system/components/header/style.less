@@ -1,0 +1,18 @@
+@logo-color: #2cb032;
+.admin-header {
+  height: @admin-header-height;
+  background: #3A4A65;
+  padding-left: 30px;
+  .tr-logo {
+    color: white;
+    &-flag {
+      background: @logo-color;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      &:before {
+        border-left: 8px solid @logo-color;
+      }
+    }
+  }
+}

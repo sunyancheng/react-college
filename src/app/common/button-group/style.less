@@ -1,0 +1,48 @@
+@border-color: rgba(51,51,51,.1);
+.button-group {
+  & > span {
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid @border-color;
+    &:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+
+.button-item {
+  // padding-right: 10px;
+  font-size: 12px;
+  transition: all .2s;
+  &+.button-item {
+    margin-left: 4px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-common {
+    color: @green-color4;
+  }
+  &-danger {
+    color: #2D003E;
+    &:hover {
+      color: rgb(237,91,71);
+    }
+  }
+  &-caution {
+    color: @warning-color;
+  }
+  &-disabled {
+    color: #3D0000;
+    &:hover {
+      color: #3D0000;
+      cursor: not-allowed;
+    }
+  }
+}

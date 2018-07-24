@@ -1,0 +1,68 @@
+@sider-height: 50px;
+@menu-active-background: #0FBF73;
+@menu-active-color: #03AE64;
+@sider-width: @common-sider-width;
+.admin-sider {
+  height: 100%;
+  width: @sider-width;
+  overflow: hidden;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    border-right: solid 5px @common-sider-border-color;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  &-wrapper {
+    width: 272px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .iconfont {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .icon-arrow-down {
+    float: right;
+    line-height: @sider-height - 3px;
+    transform: rotate(-90deg) scale(.7);
+    transition: all linear .1s;
+    margin-top: 3px;
+    &.flip-me {
+      transform: rotate(0) scale(.7);
+    }
+  }
+  &-menu {
+    display: block;
+    height: @sider-height;
+    line-height: @sider-height;
+    padding: 0 30px;
+    outline: none;
+    text-decoration: none;
+    color: #435269;
+    cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      text-decoration: none;
+      color: #435269;
+    }
+    &.active-menu {
+      color: @menu-active-color;
+      background-color: rgba(15, 191, 115, .1);
+    }
+  }
+  &-group {
+    overflow: hidden;
+    transition: all linear .1s;
+    height: 0;
+    >.admin-sider-menu {
+      padding-left: 33px;
+    }
+  }
+}

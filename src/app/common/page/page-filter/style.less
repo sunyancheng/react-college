@@ -1,0 +1,48 @@
+.page-layout__content__cabinet {
+  &__page-fliter {
+    display: flex;
+    &-left {
+      float: left;
+      display: flex;
+      width: 70%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      &>div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        &>div>div.ant-select-selection:hover {
+          border-color: #B7EBD5;
+        }
+        &>div>div.ant-select-selection:active,
+        &>div>div.ant-select-selection:focus {
+          border-color: #B7EBD5;
+          border-radius: 0 3px 3px 0;
+          box-shadow: 0 0 2px #B7EBD5;
+        }
+      }
+    }
+    &-right {
+      overflow: hidden;
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      &-wrap {
+        float: right;
+        &>button {
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
+        &>button:last-child {
+          margin-right: 0;
+        }
+      }
+
+    }
+  }
+}

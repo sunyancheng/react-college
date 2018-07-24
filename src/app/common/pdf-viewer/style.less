@@ -1,0 +1,58 @@
+@toolbar-height: 40px;
+.pdf-container {
+  // margin-right: 60px;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  background: white;
+  &-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    overflow: auto;
+    >canvas {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.pdf-toolbar {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: @toolbar-height;
+  overflow: hidden;
+  background: #666;
+  color: #ddd;
+  opacity: .7;
+  border-bottom-right-radius: 10px;
+  &:hover {
+    width: 100%;
+  }
+  >i {
+    float: left;
+    font-size: 32px;
+    line-height: 40px;
+    margin-left: 3px;
+  }
+  >div {
+    margin-left: 80px;
+    width: 400px;
+    >span {
+      float: left;
+      line-height: @toolbar-height;
+    }
+  }
+  .ant-slider {
+    float: left;
+    width: 200px;
+    margin: 14px;
+    &-rail {
+      background: #e1e1e1;
+      &:hover {
+        background: #e1e1e1;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@font-color: @font-color-main-theme;
+.user-page {
+  background-color: #FFF;
+  &-fill {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: @common-banner-height;
+    right: @user-content-padding-left-right;
+    left: @user-content-padding-left-right;
+    bottom: 0;
+  }
+  &-header {
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    color: @font-color;
+    border-bottom: 1px solid #e5e5e5;
+    .title {
+      padding-left: 30px;
+    }
+    .buttons {
+      margin-right: 30px;
+      float: right;
+      &>button:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.course-link__panel {
+  height: 150px;
+  overflow: auto;
+  &__row {
+    display: flex;
+    justify-content: space-around;
+    &-label {
+      flex-basis: 60%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.appendix-uploader {
+  padding-right: 35px;
+  position: relative;
+  margin-top: 3px;
+  .button-item {
+    position: absolute;
+    right: 0;
+    top: 0px;
+  }
+}

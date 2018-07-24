@@ -1,0 +1,105 @@
+.banner-wrapper {
+  position: relative;
+  padding: 30px;
+  width: 100%;
+  height: @common-banner-height;
+  overflow: auto;
+  &.paid, &.teacher {
+    background: linear-gradient(135deg, #00ACA9 0%, #05B871 100%);
+  }
+  &.register {
+    background: linear-gradient(135deg, #1F2449 0%, #47413D 100%);
+  }
+  .banner-left {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    .banner-avatar {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border: 2px solid #FFF;
+      border-radius: 50%;
+      background-color: #333;
+      vertical-align: middle;
+      margin-right: 30px;
+      background-size: cover;
+    }
+    .banner-desc {
+      display: inline-block;
+      vertical-align: middle;
+      color: #FFF;
+      &-name {
+        margin-bottom: 6px;
+        font-size: 24px;
+      }
+      &-detail {
+        &-brand {
+          display: inline-block;
+          width: 94px;
+          height: 28px;
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+        .register {
+          .background-image-png('/image/register_student')
+        }
+        .paid {
+          .background-image-png('/image/paid_student')
+        }
+        .primary-level {
+          .background-image-png('/image/primary_teacher')
+        }
+        .middle-level {
+          .background-image-png('/image/middle_teacher')
+        }
+        .high-level {
+          .background-image-png('/image/high_teacher')
+        }
+        &-uid {
+          vertical-align: middle;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .banner-right {
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 70px;
+    .banner-slogan {
+      position: relative;
+      &.register {
+        margin-bottom: 10px;
+      }
+      .banner-slogan-quotes-left,.banner-slogan-quotes-right {
+        position: relative;
+        display: inline-block;
+        top: -13px;
+        transform: scale(0.6);
+        &::before {
+          color: #FFF
+        }
+      }
+      .banner-slogan-detail {
+        color: #FFF;
+        font-size: 28px;
+        margin: 0 6px;
+      }
+    }
+    .upgrade {
+      width: 121px;
+      height: 23px;
+      margin: 0 auto;
+      text-align: center;
+      cursor: pointer;
+      background-image: url("/image/upgrade@2x.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.bg (@i){
+  background-position-x: -(54 * (@i - 1)) + 0px;
+}
+.target-icon-block {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  padding-top: 25px;
+  border-radius: 3px;
+  background: #435269;
+  color: #fff;
+}
+.target-icon-container {
+  position: relative;
+  width: 54px;
+  height: 48px;
+  margin: 0 auto;
+  text-align: center;
+  background: url(https://p4.ssl.qhimg.com/t0117a2c0c6d9fb7ea0.png) no-repeat 10000px/cover;
+  margin-bottom: 20px;
+  &:after {
+    content: attr(data-name);
+    font-size: 12px;
+    // color: in;
+    position: absolute;
+    bottom: -1em;
+    line-height: 1em;
+    left: 0;
+    margin-left: -33px;
+    width: 120px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  +p {
+    margin-bottom: 0;
+  }
+  &.icon-1 {
+    .bg(2)
+  }
+  &.icon-2 {
+    .bg(1)
+  }
+  &.icon-3 {
+    .bg(6)
+  }
+  &.icon-4 {
+    .bg(10)
+  }
+  &.icon-5 {
+    .bg(7)
+  }
+  &.icon-6 {
+    .bg(8)
+  }
+  &.icon-7 {
+    .bg(11)
+  }
+  &.icon-8 {
+    .bg(3)
+  }
+  &.icon-9 {
+    .bg(9)
+  }
+  &.icon-user {
+    .bg(5)
+  }
+  &.icon-platform {
+    .bg(4)
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2){
+  .target-icon-container {
+    background: url(https://p4.ssl.qhimg.com/t01c274f1759d10b178.png) no-repeat 10000px/cover;
+  }
+}
+@media (min--moz-device-pixel-ratio: 2) {
+  .target-icon-container {
+    background: url(https://p4.ssl.qhimg.com/t01c274f1759d10b178.png) no-repeat 10000px/cover;
+  }
+}

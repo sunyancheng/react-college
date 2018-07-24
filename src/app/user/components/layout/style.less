@@ -1,0 +1,25 @@
+.user-layout {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(241, 246, 247);
+  box-sizing: border-box;
+  overflow: hidden;
+  .vertical-scroll-panel {
+    position: absolute;
+  }
+  &-scrollable {
+    overflow-y: auto;
+  }
+  &-padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.layout-fixed-width {
+  width: @user-width;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 @user-content-padding-left-right;
+}

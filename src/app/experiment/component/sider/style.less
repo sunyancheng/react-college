@@ -1,0 +1,44 @@
+.experiment-sider-component {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #f1f6f7;
+  height: 100%;
+  h3 {
+    border-top: 1px solid #f1f6f7;
+    border-bottom: 1px solid #f1f6f7;
+    padding: 0 30px;
+    font-size: 16px;
+    color: #435269;
+    line-height: 60px;
+    &:before {
+      content: '';
+      display: block;
+      width: 5px;
+      background: rgba(0, 0, 0, 0.25);
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
+    }
+    &:after {
+      content: '';
+      color: #fff;
+      display: block;
+      width: 5px;
+      height: 40px;
+      background: url(https://p0.ssl.qhimg.com/t018f28f4ecb262d5ca.png) 0/cover;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -20px;
+    }
+  }
+  .content-container {
+    flex: 1;
+    // padding: 0 30px;
+    overflow: auto;
+  }
+  .pdf-container {
+    margin-right: 3px;
+  }
+}

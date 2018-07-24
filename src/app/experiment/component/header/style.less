@@ -1,0 +1,72 @@
+@header-height: @user-header-height;
+@font-color: @deep-purple;
+.experiment-header {
+  height: @header-height;
+  // margin: 0 30px;
+  .tr-logo {
+    width: 25%;
+    padding-left: 30px;
+  }
+  .cm-btn {
+    margin-left: 10px;
+  }
+  .user-info {
+    float: right;
+    line-height: 80px;
+    margin: 0 0px 0 40px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .timer {
+    margin-left: 40px;
+    margin-right: 10px;
+    color: #03AE64;
+    font-family: @font-family-bold;
+    &.danger {
+      color: #FF3B27;
+    }
+  }
+  .experiment-title {
+    color: #03AE64;
+    line-height: 80px;
+    font-size: 16px;
+    font-family: @font-family-semibold;
+    width: calc(~'100% - 620px');
+    display: inline-block;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &-right {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 30px;
+    &-menu {
+      width: calc(~'100% - 170px');
+      line-height: @header-height;
+      font-size: 14px;
+    }
+    &-avatar {
+      height: @header-height;
+      line-height: @header-height;
+      width: 170px;
+      .user-info {
+        color: black;
+        margin: 0;
+      }
+    }
+  }
+}
+.ant-popover-inner-content {
+  width: 1000px;
+  height: 500px;
+  canvas {
+    width: 540px;
+    height: 380px!important;
+  }
+}
+.vis-edit-mode, .vis-manipulation {
+  display: none;
+}

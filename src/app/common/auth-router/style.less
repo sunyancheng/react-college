@@ -1,0 +1,27 @@
+.no-match {
+  width: 520px;
+  margin: 50px auto 0;
+  &__bg-img {
+    .background-image-png('/image/image-404');
+    background-size: 520px 400px;
+    height: 400px;
+    margin-bottom: 35px;
+  }
+  &__desc {
+    text-align: center;
+    &-title {
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #222333;
+    }
+    &-detail {
+      margin-bottom: 30px;
+      font-size: 14px;
+      color: @font-color-shallow3;
+    }
+  }
+  &__desc-button {
+    display: flex;
+    justify-content: center;
+  }
+}

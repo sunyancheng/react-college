@@ -1,0 +1,42 @@
+@font-green: @green-color;
+.list-operation {
+  padding: 0 10px;
+  &:hover {
+    cursor: pointer;
+  }
+  &-check {
+    color: @font-green;
+  }
+  &-delete, &-freeze, &-unfreeze{
+    &:hover {
+      color: rgb(255,72,54);
+    }
+  }
+}
+
+.status-board {
+  position: relative;
+  &::before {
+    display:block;
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    content: '',
+  }
+  &-normal {
+    color: @font-green;
+    &::before {
+      background-color: @font-green;
+    }
+  }
+  &-alert {
+    color: red;
+    &::before {
+      background-color: red;
+    }
+  }
+}

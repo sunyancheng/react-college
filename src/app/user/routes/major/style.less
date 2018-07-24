@@ -1,0 +1,299 @@
+@disable-color: @grey-color2;
+@major-bottom: 88px;
+@icon-size: 30px;
+@banner-height: 80px;
+.major {
+  box-sizing: border-box;
+  background-color: @border-color;
+  padding-bottom: @major-bottom;
+  &-banner {
+    height: 280px;
+    background-color: @banner-color;
+    &-left {
+      float: left;
+      height: 100%;
+      padding: 40px 60px;
+      img {
+        height: 100%;
+      }
+    }
+    &-right {
+      padding: 50px;
+      color: #FFFFFF;
+      overflow: hidden;
+      h1 {
+        font-size: 30px;
+        color: #FFFFFF;
+        font-weight: normal;
+      }
+      p {
+        font-size: 12px;
+        line-height: 24px;
+      }
+      .feature {
+        font-size: 12px;
+        display: inline-block;
+        margin-right: 10px;
+        padding: 0 10px;
+        transform: skewX(-15deg);
+        position: relative;
+        border: solid 1px @green-color;
+        color: @green-color;
+        line-height: 28px;
+      }
+      .valid-date {
+        margin-top: 10px;
+        font-size: 12px;
+        color: @grey-color2;
+      }
+    }
+  }
+  &-step {
+    position: relative;
+    height: 120px;
+    padding: 0 60px;
+    background-color: #FFF;
+    font-size: 16px;
+    &-begin {
+      line-height: 120px;
+      color: @green-color;
+    }
+    &-bar {
+      position: absolute;
+      left: 135px;
+      right: 200px;
+      top: 0;
+      bottom: 0;
+      overflow: hidden;
+      &-table {
+        display: table;
+        width: 100%;
+        height: 100%;
+        &-row {
+          display: table-row;
+          &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 6px;
+            margin-top: -3px;
+            border-radius: 2px;
+            display: block;
+            content: '';
+            background-color: @grey-color;
+          }
+        }
+      }
+      &-item {
+        display: table-cell;
+        text-align: center;
+        padding-top: 16px;
+        &-text {
+          color: @green-color;
+          white-space: nowrap;
+        }
+        &-icon {
+          position: relative;
+          z-index: 1;
+          img {
+            position: absolute;
+            left: 50%;
+            margin-left: -23px;
+          }
+          &-enable {
+            background-image: url('/image/icon/course-open.png');
+          }
+          &-disable {
+            background-image: url('/image/icon/course-block.png');
+          }
+        }
+        &-disable {
+          .major-step-bar-item-text {
+            color: #435269;
+          }
+        }
+        &-last-enable {
+          // position: relative;
+          &::before {
+            position: absolute;
+            top: 50%;
+            /* left: 0; */
+            width: 100%;
+            /* right: -2000px; */
+            height: 6px;
+            margin-top: -3px;
+            border-radius: 2px;
+            display: block;
+            content: '';
+            background-color: #03AE64;
+            margin-left: -100%;
+          }
+          &::after {
+            position: relative;
+            top: 50%;
+            left: -50%;
+            width: 100%;
+            /* right: -2000px; */
+            height: 6px;
+            margin-top: 18px;
+            border-radius: 2px;
+            display: block;
+            content: '';
+            background-color: #03AE64;
+            /* margin-left: 100px; */
+          }
+        }
+        &-last-and-enable {
+          &:after {
+            left: -3px;
+            padding-right: 3px;
+            box-sizing: content-box;
+          }
+        }
+      }
+    }
+    &-medal {
+      position: absolute;
+      width: 55px;
+      top: 0;
+      right: 7.4%;
+      height: 88px;
+      .background-image-png('/image/icon/medal');
+      background-size: 100%;
+      font-size: 16px;
+      color: @font-color-main-theme;
+      &::before {
+        position: absolute;
+        left: -33px;
+        bottom: 21px;
+        display: block;
+        content: '考试';
+      }
+      &::after {
+        position: absolute;
+        right: -33px;
+        bottom: 21px;
+        display: block;
+        content: '认证';
+      }
+    }
+  }
+}
+
+.card-content {
+  box-sizing: border-box; // display: flex;
+  color: @font-color-main-theme;
+  font-size: 14px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+  &-title {
+    margin-bottom: 9px;
+  }
+  &-detail {
+    &-link {
+      text-decoration: none;
+      color: @font-color-main-theme;
+      &:hover {
+        color: @green-color;
+      }
+      &::after {
+        display: inline-block;
+        padding: 0 5px;
+        color: @font-color-shallow;
+        content: '/';
+      }
+      &.disabled {
+        color: @grey-color2;
+        cursor: not-allowed;
+      }
+      &:last-child::after {
+        display: none;
+      }
+      &.link-disabled {
+        cursor: not-allowed;
+        color: @grey-color2;
+        &:hover {
+          color: @grey-color2;
+        }
+      }
+    }
+  }
+  &-disabled {
+    margin-top: 25px;
+  }
+}
+
+.card-course {
+  flex: 1;
+  float: left;
+  width: 33%;
+  margin-bottom: 15px;
+  cursor: pointer;
+  // margin-top: 40px; // margin-bottom: 40px;
+}
+
+.card-course-disabled {
+  // margin-top: 15px; // margin-bottom: 40px;
+  color: @disable-color;
+  cursor: not-allowed;
+}
+
+.card {
+  box-sizing: border-box;
+  padding: 0 80px 40px 80px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #FFF;
+  color: @font-color-main-theme;
+  &-head {
+    // margin-bottom: 40px;
+    overflow: hidden;
+    &-banner {
+      float: left;
+      padding: 8px 20px 16px 20px;
+      margin-right: 40px;
+      height: @banner-height;
+      background: linear-gradient(130deg, #0DBE87 0%, #12D059 84%);
+      color: #FFF;
+      &-number {
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+      &-title {
+        font-size: 24px;
+      }
+      &-disabled {
+        background: @font-color-shallow;
+      }
+    }
+    &-slogan {
+      display: inline-block;
+      line-height: @banner-height;
+      height: @banner-height;
+      font-size: 18px;
+    }
+  }
+}
+
+.quotes-left,
+.quotes-right {
+  position: relative;
+  display: inline-block;
+  top: -5px;
+  transform: scale(0.7);
+}
+
+.quotes-left {
+  margin-right: 23px;
+}
+
+.quotes-right {
+  margin-left: 23px;
+}
+
+.quotes-left::before,
+.quotes-right::before {
+  font-size: 12px;
+}

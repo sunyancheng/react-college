@@ -1,0 +1,24 @@
+@border-color: #f1f6f7;
+@highlight-color: @green-color;
+.table-footer {
+  position: relative;
+  border-top: solid 1px @border-color;
+  .ant-pagination {
+    &-total-text {
+      position: absolute;
+      left: 60px;
+      font-size: 12px;
+      .highlight {
+        color: @highlight-color;
+      }
+    }
+    &-item-active {
+      border-color: @green-color;
+      >a {
+        color: @green-color;
+      }
+    }
+    padding: 14px 60px;
+    float: right;
+  }
+}

@@ -1,0 +1,187 @@
+@bth-primary-color: #0FBF73;
+@bth-hover: #16CC7E;
+@bth-disabled-color: #B7EBD5;
+@bth-disabled-background: #F5F5F5;
+@bth-ghost-border-color: #D9D9D9;
+@bth-ghost-hover-font-color: #03AE64;
+@bth-text-color: #FFF;
+@btn-danger-color: #FF2B27;
+@btn-danger-hover-color: #FF604F;
+@btn-danger-disabled: #FFC4BE;
+@btn-disabled-text-color: #bbb;
+.cm-btn {
+  box-sizing: border-box;
+  position: relative;
+  background-color: @bth-primary-color;
+  font-size: 14px;
+  color: @bth-text-color;
+  font-family: @font-family-regular;
+  border: 1px solid;
+  border-color: transparent;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: all .2s;
+  &:focus {
+    outline: 0;
+  }
+  &-small {
+    padding: 0px 30px;
+    line-height: 32px;
+  }
+  &-medium {
+    padding: 10px 30px; // line-height: 32px;
+    height: 40px;
+  }
+  &-primary {
+    background-color: @bth-primary-color;
+    border-color: @bth-primary-color;
+    &:hover {
+      cursor: pointer;
+      background-color: @bth-hover;
+      border-color: @bth-hover;
+    }
+    &-clicked::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      bottom: -2px;
+      right: -2px;
+      border-radius: inherit;
+      border: 0 solid @bth-primary-color;
+      opacity: 0.4;
+      animation: buttonEffect .4s;
+      display: block;
+    }
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      bottom: -1px;
+      right: -1px;
+      background: #fff;
+      opacity: 0.35;
+      content: '';
+      border-radius: inherit;
+      z-index: 1;
+      transition: opacity .2s;
+      pointer-events: none;
+      display: none; // none！
+    }
+    &:active {
+      background-color: @bth-hover;
+      text-decoration: none;
+      box-shadow: none;
+      outline: 0;
+    }
+    &-disabled {
+      background-color: @bth-disabled-color;
+      border-color: @bth-disabled-color;
+      &:hover {
+        cursor: not-allowed;
+        background-color: @bth-disabled-color;
+        border-color: @bth-disabled-color;
+      }
+    }
+    &-ghost {
+      background-color: transparent;
+      border-color: @bth-ghost-border-color;
+      color: @font-color-main-theme;
+      &:active {
+        border-color: @bth-primary-color;
+        color: @bth-primary-color;
+      }
+      &:hover {
+        border-color: @bth-hover;
+        color: @bth-ghost-hover-font-color;
+        cursor: pointer;
+        background-color: transparent;
+      }
+    }
+    &-disabled-ghost {
+      background-color: @bth-disabled-background;
+      border-color: @bth-ghost-border-color;
+      color: @btn-disabled-text-color;
+      &:hover {
+        cursor: not-allowed;
+        background-color: @bth-disabled-background;
+        border-color: @bth-ghost-border-color;
+      }
+    }
+  }
+  &-danger {
+    background-color: @btn-danger-color;
+    border-color: @btn-danger-color;
+    &:hover {
+      cursor: pointer;
+      background-color: @btn-danger-hover-color;
+      border-color: @btn-danger-hover-color;
+    }
+    &-clicked::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      bottom: -2px;
+      right: -2px;
+      border-radius: inherit;
+      border: 0 solid @btn-danger-disabled;
+      opacity: 0.4;
+      animation: buttonEffect .4s;
+      display: block;
+    }
+    &-ghost {
+      background-color: transparent;
+      border-color: @bth-ghost-border-color;
+      color: @font-color-main-theme;
+      &:active {
+        border-color: @btn-danger-color;
+        color: @btn-danger-color;
+      }
+      &:hover {
+        border-color:@btn-danger-color;
+        color: @btn-danger-color;
+        cursor: pointer;
+        background-color: transparent;
+      }
+    }
+    &-disabled {
+      background-color: @btn-danger-disabled;
+      border-color: @btn-danger-disabled;
+      &:hover {
+        cursor: not-allowed;
+        background-color: @btn-danger-disabled;
+        border-color: @btn-danger-disabled;
+      }
+    }
+    &-disabled-ghost {
+      background-color: @bth-disabled-background;
+      border-color: @bth-ghost-border-color;
+      color: @font-color-main-theme;
+      &:hover {
+        cursor: not-allowed;
+        background-color: @bth-disabled-background;
+        border-color: @bth-ghost-border-color;
+      }
+    }
+  }
+}
+
+.btn-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  color: #FFF;
+}
+
+@keyframes buttonEffect {
+  to {
+    opacity: 0;
+    top: -6px;
+    left: -6px;
+    bottom: -6px;
+    right: -6px;
+    border-width: 6px;
+  }
+}

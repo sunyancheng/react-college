@@ -1,0 +1,220 @@
+@table-tree-line-color: #DEEEE7;
+@table-tree-cross-color: @green-color2;
+@page-background-color: white;
+@guide-line-color: #DEEEE7;
+@cross-color: rgb(121, 187, 155);
+@guide-line-width: 33px;
+@table-tree-row-height: 50px;
+.tree-table {
+  padding: 2px 10px;
+  .tree-table__row {
+    height: @table-tree-row-height;
+    line-height: @table-tree-row-height;
+    margin: 10px 10px 0 5px;
+    position: relative;
+  }
+  .node-indent {
+    float: left;
+    width: 15px;
+    height: 1px;
+  }
+  .tree-table__header+.node-block {
+    padding-left: 11px;
+  }
+  .node-block {
+    overflow: hidden;
+    padding-left: 45px;
+  }
+  .guide-line {
+    height: 100%;
+    width: @guide-line-width;
+    float: left;
+    padding-left: 2px;
+    .line-v {
+      height: 9000px;
+      position: absolute;
+      margin: -8px 0 0 5px;
+      width: 2px;
+      background-color: @guide-line-color;
+      z-index: 1;
+      bottom: 50%;
+    }
+    .line-h {
+      position: absolute;
+      margin-top: 19px;
+      width: @guide-line-width - 4px;
+      height: 1px;
+      background-color: @guide-line-color;
+      z-index: 2;
+    }
+    .circle-wrap {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      padding: 1px;
+      margin-top: 14px;
+      background-color: @page-background-color;
+      text-align: center;
+      z-index: 3;
+    }
+    .circle {
+      width: 100%;
+      height: 100%;
+      border: 1px @guide-line-color solid;
+      border-radius: 10px;
+    }
+    .circle:hover {
+      cursor: pointer;
+    }
+    .circle-v {
+      display: none;
+      position: absolute;
+      width: 2px;
+      height: 60%;
+      margin: 12% 0 0 37%;
+      background-color: @cross-color;
+    }
+    .circle-h {
+      display: none;
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      margin: 7px 0 0 2px;
+      background-color: @cross-color;
+    }
+    &.guide--collapse {
+      .circle-wrap {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0 0 -4px;
+      }
+      .circle-h {
+        display: block;
+      }
+      .circle-v {
+        display: block;
+      }
+    }
+    &.guide--expand {
+      .circle-wrap {
+        width: 20px;
+        height: 20px;
+        margin: 10px 0 0 -4px;
+      }
+      .circle-h {
+        display: block;
+      }
+    }
+  }
+  .hide {
+    display: none;
+  }
+}
+
+.tree-table--cross {
+  padding: 2px 10px;
+  color: @table-tree-cross-color;
+  .tree-table__row {
+    height: 18px;
+    line-height: 14px;
+    margin: 4px 10px 0 4px;
+    position: relative;
+  }
+  .node-indent {
+    float: left;
+    width: 6px;
+    height: 1px;
+  }
+  .node-block {
+    overflow: hidden;
+    padding-left: 22px;
+  }
+  .guide-line {
+    height: 100%;
+    width: 4px;
+    float: left;
+    padding-left: 2px;
+    margin-right: 10px;
+    .line-v {
+      height: 9000px;
+      position: absolute;
+      margin: -8px 0 0 -2px;
+      width: 2px;
+      border-left: dotted 1px @table-tree-line-color;
+      z-index: 1;
+      bottom: 50%;
+    }
+    .line-h {
+      position: absolute;
+      margin-top: 8px;
+      width: 12px;
+      height: 2px;
+      border-top: dotted 1px @table-tree-line-color;
+      z-index: 2;
+    }
+    .cross-wrap {
+      display: none;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      margin: 2px 0 0 -8px;
+      text-align: center;
+      z-index: 3;
+      cursor: pointer;
+    }
+    .cross-h {
+      display: none;
+      position: absolute;
+      width: 3px;
+      height: 80%;
+      margin: 15% 0 0 5px;
+      background-color: @table-tree-cross-color;
+    }
+    .cross-v {
+      display: none;
+      position: absolute;
+      width: 3px;
+      height: 80%;
+      margin: 15% 0 0 5px;
+      background-color: @table-tree-cross-color;
+      transform: rotate(90deg);
+    }
+    &.guide--collapse {
+      .circle {
+        cursor: pointer;
+      }
+      .cross-wrap {
+        display: block
+      }
+      .cross-h {
+        display: block;
+      }
+      .cross-v {
+        display: block;
+      }
+    }
+    &.guide--expand {
+      .cross-wrap {
+        display: block
+      }
+      .cross-v {
+        display: block;
+      }
+    }
+  }
+}
+
+.null-mask {
+  margin: 0 auto 40px;
+  .null {
+    margin: 0 auto 20px;
+    .background-image-png('/image/icon-null');
+    width: 160px;
+    height: 130px;
+  }
+  .desc {
+    font-size: 24px;
+    color: @font-color-shallow3;
+    text-align: center;
+  }
+}

@@ -1,0 +1,38 @@
+@import '~order/common/style/index.less';
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.order-layout {
+  padding: 20px 0;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  background-color: #F1F6F7;
+}
+
+.mobile-order-wrapper {
+  height: 100%;
+  overflow: auto;
+  .mobile-order-layout {
+    position: relative;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .65);
+    padding: 20px 20px;
+  }
+}

@@ -1,0 +1,29 @@
+@top-menu-height: @admin-header-height;
+
+.layout {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.layout {
+  &__main {
+    position: absolute;
+    top: @top-menu-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    &__sider {
+      float: left;
+      height: 100%;
+    }
+    &__content {
+      position: relative;
+      overflow: auto;
+      height: 100%;
+      // min-width: 1179px;
+      // min-height: 797px;
+    }
+  }
+}

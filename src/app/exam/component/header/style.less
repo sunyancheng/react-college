@@ -1,0 +1,48 @@
+@header-height: @user-header-height;
+@font-color: @deep-purple;
+.experiment-header {
+  height: @header-height;
+  margin: 0 30px;
+  // min-width: 1200px;
+  .cm-btn + .cm-btn {
+    margin-left: 10px;
+  }
+  .user-info {
+    float: right;
+    line-height: 80px;
+    margin: 0 0px 0 40px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .timer {
+    margin-left: 40px;
+    margin-right: 10px;
+    color: #03AE64;
+    font-family: @font-family-bold;
+  }
+  .experiment-title {
+    margin-right: 40px;
+    color: #03AE64;
+    line-height: 80px;
+    font-size: 16px;
+    font-family: @font-family-semibold;
+  }
+  &-right {
+    float: right;
+    &-menu {
+      // display: inline-block;
+      line-height: @header-height;
+      float: right; // float: right;
+      font-size: 14px;
+    }
+    &-avatar {
+      float: right;
+      height: @header-height;
+      line-height: @header-height;
+      .user-info {
+        color: black;
+      }
+    }
+  }
+}

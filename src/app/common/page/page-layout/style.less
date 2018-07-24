@@ -1,0 +1,54 @@
+@font-color: @font-color-main-theme;
+@font-theme-color: @green-color;
+@title-font-color: @font-color-main-theme;
+.page-layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // min-width: 1340px;
+  &__header {
+    box-sizing: border-box;
+    padding: 16px 60px;
+    height: 60px;
+    background-color: #FFF;
+    border-bottom: 1px solid rgb(241, 246, 247);
+    display: flex;
+    align-items: center;
+    &-title {
+      flex: 1;
+      font-size: 20px;
+      color: @title-font-color;
+    }
+    &-btn {
+      &>button {
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      } // float: right;
+    }
+  }
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    &__cabinet {
+      padding: 20px 60px 10px 60px;
+      overflow: hidden;
+      background-color: #FAFAFA;
+      flex-shrink: 0;
+    }
+    &__rest {
+      flex: 1 0 auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__aside {
+    position: relative;
+    display: flex;
+    flex: auto;
+  }
+}
